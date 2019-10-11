@@ -1,0 +1,55 @@
+:root{
+    --konek-white: rgba(215, 215, 225, 1);
+    --konek-black: rgba(0, 0, 0, 1);
+    --konek-navy-light: rgba(0, 0, 100, 1);
+    --konek-navy-black: rgba(0, 0, 25, 1);
+    --konek-blue-grey: rgba(185, 185, 215, 1);
+}
+body {
+    display: block;
+    font-family: 'Roboto Mono', monospace;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    color: var(--konek-white);
+    background: var(--konek-navy-black);
+    background: linear-gradient(0deg, var(--konek-navy-light) 0%, var(--konek-navy-black) 35%, var(--konek-black) 100%);
+}
+body:focus {
+    outline: none;
+}
+
+header {
+    background-color: var(--konek-black);
+    height: 5vh;
+}
+
+#main-container {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin: 0;
+    font-size: 2.2vw;
+}
+
+/*!* Tell all items to be 100% width, via flex-basis *!*/
+/*.main-container > * {*/
+/*    flex: 1 100%;*/
+/*}*/
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+.error-container .error-display {
+    flex: 1;
+    display: flex;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    padding: 2vw;
+    color: var(--konek-black);
+    background-color: var(--konek-blue-grey);
+}
+
+/* http://ssl.gstatic.com/onebox/media/sports/logos/bTzlW33n9s53DxRzmlZXyg_48x48.png */
