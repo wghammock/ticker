@@ -10,6 +10,7 @@
     --konek-light-grey: rgba(242,242,242,1);
     --konek-medlite-grey: rgba(200,200,200,1);
     --konek-medium-grey: rgba(150,150,150,1);
+    --konek-dark-grey: rgba(60,60,60,1);
 }
 body {
     display: block;
@@ -27,12 +28,18 @@ body:focus {
 
 header {
     background-color: var(--konek-black);
-    height: 5vh;
+    width: 98vw;
+    height: 4.5vh;
+    max-height: 4.5vh;
+    text-align: right;
+    padding-top: .5vh;
+    padding-right: 2vw;
 }
 
 #main-container {
     display: flex;
     min-height: 95vh;
+    max-height: 95vh;
     flex-direction: column;
     margin: 0;
     font-size: 2.2vw;
@@ -70,8 +77,9 @@ header {
 #ticker-tape {
     z-index: 100;
     position: absolute;
-    bottom: 0;
-    min-height: 16vh;
+    top: 5vh;
+    min-height: 17vh;
+    max-height: 17vh;
     min-width: 100vw;
     display: flex;
     flex: 1;
@@ -88,12 +96,12 @@ header {
     justify-content: center;
     min-width: 20vw;
     max-width: 20vw;
-    min-height: 15vh;
-    max-height: 15vh;
-    margin-top: 1vh;
-    margin-right: 1wh;
+    min-height: 16vh;
+    max-height: 16vh;
+    margin-top: .5vh;
     background-color: var(--konek-blue);
     color: var(--konek-white);
+    z-index: 200;
 }
 #ticker-tape #category-wrapper #feed-category {
     display: flex;
@@ -119,18 +127,19 @@ header {
     max-height: 6vw;
     margin: 0;
 }
-
 #ticker-tape #matches-wrapper {
+    position: absolute;
+    left: 20vw;
     display: flex;
     flex: 1;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-width: 80vw;
-    max-width: 80vw;
-    min-height: 15vh;
-    max-height: 15vh;
-    margin-top: 1vh;
+    min-width: 79.75vw;
+    max-width: 79.75vw;
+    min-height: 16vh;
+    max-height: 16vh;
+    margin-top: .5vh;
     padding-left: .25vw;
     color: var(--konek-white);
     background-color: var(--konek-medium-grey);
@@ -144,10 +153,11 @@ header {
     justify-content: flex-start;
     min-width: 80vw;
     max-width: 80vw;
-    min-height: 15vh;
-    max-height: 15vh;
+    min-height: 16vh;
+    max-height: 16vh;
     color: var(--konek-white);
 }
+
 #ticker-tape #matches-wrapper #matches-slider > div{
     display: flex;
     flex: 1;
@@ -156,8 +166,8 @@ header {
     justify-content: center;
     min-width: 20vw;
     max-width: 20vw;
-    min-height: 15vh;
-    max-height: 15vh;
+    min-height: 16vh;
+    max-height: 16vh;
     padding: .125vw;
 }
 #ticker-tape #matches-wrapper #matches-slider > div .match-box{
@@ -169,24 +179,45 @@ header {
     color: var(--konek-black);
     background-color: var(--konek-light-grey);
     padding-top: 1vh;
-    padding-bottom: 1vh;
     font-size: 1.6vw;
+    overflow: hidden;
 }
 #ticker-tape #matches-wrapper #matches-slider > div .match-box .away,
 #ticker-tape #matches-wrapper #matches-slider > div .match-box .home {
     display: flex;
     flex: 1;
     flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
     padding-left: 1vw;
     padding-right: 1vw;
 }
-#ticker-tape #matches-wrapper #matches-slider > div .match-box .away div,
-#ticker-tape #matches-wrapper #matches-slider > div .match-box .home div {
-    margin-right: 1vw;
-}
+/*#ticker-tape #matches-wrapper #matches-slider > div .match-box .away .team > div,*/
+/*#ticker-tape #matches-wrapper #matches-slider > div .match-box .home .team > div {*/
+/*    flex: 1;*/
+/*}*/
 #ticker-tape #matches-wrapper #matches-slider > div .match-box .away .team,
 #ticker-tape #matches-wrapper #matches-slider > div .match-box .home .team {
+    flex: 1;
     color: var(--konek-blue-dark);
+    margin-right: 1vw;
+    margin-left: .5vw;
 }
+#ticker-tape .logo-image {
+    display: block;
+    max-height: 1.6vw;
+    margin: 0;
+}
+#ticker-tape #matches-wrapper #matches-slider > div .match-box .total {
+    background-color: var(--konek-medlite-grey);
+    border-top: .5vh solid var(--konek-medlite-grey);
+    border-bottom: .5vh solid var(--konek-medlite-grey);
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin-top: 1vh;
+    text-align: right;
+    color: var(--konek-dark-grey);
+}
+
 
 /* =============== END ticker-tape component =========== */
