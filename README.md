@@ -2,14 +2,19 @@
 
 Notes:
 
-1) A monospace web font is used to create a smoother consistent scroll
-The following chars are not supported by default.  This is to reduce the size of the webfont used. 
-ČĆĐŠŽćđšžАБВГҐДЂЕЄЖЗЅИІЙЈКЛЉМНЊОПРСТЋУЎФХЦЧЏШЩЪЫЬЭЮЯабвгґдђеєжзѕиійјклљмнњопрстћуўфхцчџшщъыьэюяΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψωάΆέΈέΉΐΊΰϋΎΏĂÂÊÔƠƯăâêô
+1) The View is optimized for a screen ratio of 16:9. 
+There is some responsiveness within that ball-park range.
+
 
 2) ECMAScript 6 support is required, if javascript is disabled an error will display.
 When opened in IE, user will be prompted to upgrade browser.
 
-3) All font sizes are veiwport sized and will scale to viewport size.
+3) A monospace web font is used to create a smoother consistent spacing
+To reduce the size of the webfont used, I removed the following chars
+ČĆĐŠŽćđšžАБВГҐДЂЕЄЖЗЅИІЙЈКЛЉМНЊОПРСТЋУЎФХЦЧЏШЩЪЫЬЭЮЯабвгґдђеєжзѕиійјклљмнњопрстћуўфхцчџшщъыьэюяΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψωάΆέΈέΉΐΊΰϋΎΏĂÂÊÔƠƯăâêô
+
+4) I've added some good hooks for future use like autoplay and direction, not everything is 100% is
+fully flushed out because this is just a demo ; )
 
 
 ==========================================
