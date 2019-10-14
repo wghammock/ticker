@@ -1,9 +1,15 @@
 :root{
-    --konek-white: rgba(215, 215, 225, 1);
-    --konek-black: rgba(0, 0, 0, 1);
-    --konek-navy-light: rgba(0, 0, 100, 1);
-    --konek-navy-black: rgba(0, 0, 25, 1);
-    --konek-blue-grey: rgba(185, 185, 215, 1);
+    --konek-white: rgba(215,215,225,1);
+    --konek-black: rgba(0,0,0,1);
+    --konek-navy: rgba(0,0,45,1);
+    --konek-navy-light: rgba(0,0,100,1);
+    --konek-navy-black: rgba(0,0,25,1);
+    --konek-blue: rgba(0,45,105,1);
+    --konek-blue-grey: rgba(185,185,215,1);
+    --konek-blue-dark: rgba(95,105,120,1);
+    --konek-light-grey: rgba(242,242,242,1);
+    --konek-medlite-grey: rgba(200,200,200,1);
+    --konek-medium-grey: rgba(150,150,150,1);
 }
 body {
     display: block;
@@ -13,7 +19,7 @@ body {
     height: 100%;
     color: var(--konek-white);
     background: var(--konek-navy-black);
-    background: linear-gradient(0deg, var(--konek-navy-light) 0%, var(--konek-navy-black) 35%, var(--konek-black) 100%);
+    background: linear-gradient(0deg, var(--konek-navy-black) 0%, var(--konek-navy) 35%, var(--konek-navy-light) 100%);
 }
 body:focus {
     outline: none;
@@ -26,7 +32,7 @@ header {
 
 #main-container {
     display: flex;
-    min-height: 100vh;
+    min-height: 95vh;
     flex-direction: column;
     margin: 0;
     font-size: 2.2vw;
@@ -38,18 +44,149 @@ header {
 /*}*/
 .error-container {
     display: flex;
+    min-height: 95vh;
+    min-width: 100vw;
     flex-direction: column;
-    align-content: center;
+    align-items: center;
+    justify-content: center;
 }
 .error-container .error-display {
-    flex: 1;
     display: flex;
+    flex: 1;
+    justify-content: center;
+    flex-direction: column;
     text-align: center;
-    width: 80%;
+    min-width: 70vw;
+    max-width: 80vw;
+    min-height: 10vh;
+    max-height: 40vh;
     margin: auto;
     padding: 2vw;
     color: var(--konek-black);
     background-color: var(--konek-blue-grey);
 }
 
-/* http://ssl.gstatic.com/onebox/media/sports/logos/bTzlW33n9s53DxRzmlZXyg_48x48.png */
+/* =============== ticker-tape component =========== */
+#ticker-tape {
+    z-index: 100;
+    position: absolute;
+    bottom: 0;
+    min-height: 16vh;
+    min-width: 100vw;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--konek-medlite-grey);
+}
+#ticker-tape #category-wrapper {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 20vw;
+    max-width: 20vw;
+    min-height: 15vh;
+    max-height: 15vh;
+    margin-top: 1vh;
+    margin-right: 1wh;
+    background-color: var(--konek-blue);
+    color: var(--konek-white);
+}
+#ticker-tape #category-wrapper #feed-category {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    min-height: 5vh;
+    max-height: 5vh;
+    margin: auto;
+    font-size: 2.8vw;
+}
+#ticker-tape #category-wrapper #feed-category > div {
+    flex: 1;
+    margin: .35vw;
+}
+#ticker-tape #category-wrapper #feed-category:first-child {
+    width: 6vw;
+    height: 6vw;
+}
+#ticker-tape .cat-image {
+    display: block;
+    max-height: 6vw;
+    margin: 0;
+}
+
+#ticker-tape #matches-wrapper {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 80vw;
+    max-width: 80vw;
+    min-height: 15vh;
+    max-height: 15vh;
+    margin-top: 1vh;
+    padding-left: .25vw;
+    color: var(--konek-white);
+    background-color: var(--konek-medium-grey);
+    overflow: hidden;
+}
+#ticker-tape #matches-wrapper #matches-slider{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 80vw;
+    max-width: 80vw;
+    min-height: 15vh;
+    max-height: 15vh;
+    color: var(--konek-white);
+}
+#ticker-tape #matches-wrapper #matches-slider > div{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 20vw;
+    max-width: 20vw;
+    min-height: 15vh;
+    max-height: 15vh;
+    padding: .125vw;
+}
+#ticker-tape #matches-wrapper #matches-slider > div .match-box{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    color: var(--konek-black);
+    background-color: var(--konek-light-grey);
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    font-size: 1.6vw;
+}
+#ticker-tape #matches-wrapper #matches-slider > div .match-box .away,
+#ticker-tape #matches-wrapper #matches-slider > div .match-box .home {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+#ticker-tape #matches-wrapper #matches-slider > div .match-box .away div,
+#ticker-tape #matches-wrapper #matches-slider > div .match-box .home div {
+    margin-right: 1vw;
+}
+#ticker-tape #matches-wrapper #matches-slider > div .match-box .away .team,
+#ticker-tape #matches-wrapper #matches-slider > div .match-box .home .team {
+    color: var(--konek-blue-dark);
+}
+
+/* =============== END ticker-tape component =========== */
