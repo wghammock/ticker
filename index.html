@@ -48,7 +48,7 @@
     <nav id="ticker-tape-nav">
         <div></div>
         <button id="start-feed" class="enabled">START</button>
-        <button id="stop-feed" class="disabled">STOP</button>
+        <button id="stop-feed" class="disabled">PAUSE</button>
         <div></div>
     </nav>
 
@@ -127,15 +127,22 @@
     // match_width = you must get the full width of this item #ticker-tape #matches-wrapper #matches-slider > div ( width + margin / border)
     function TickerTape(feed = null, auto_start = 0, direction = 1, initial_pos = 0, match_width = 10, speed, max) {
 
-        this.feed = JSON.parse(feed);
-        this.direction = direction;
-        this.pos = initial_pos;
-        this.match_width = match_width;
-        this.speed = speed;
-        this.max_matches_on_screen = max;
-        this.stopped = (auto_start === 0) ? 1 : 0;
         // the return object
         this.master_obj = [];
+
+        this.feed = JSON.parse(feed);
+
+        this.master_obj['direction'] = direction;
+        this.master_obj['pos'] = initial_pos;
+        this.master_obj['match_width'] = match_width;
+        this.master_obj['speed'] = speed;
+        this.master_obj['init'] = 0;
+
+
+        // FOR FUTURE USE - hooks for later
+        // this.max_matches_on_screen = max;
+        // this.stopped = (auto_start === 0) ? 1 : 0;
+
 
         // Kill the feature if the feed is blank or undefined
         if (!feed) {
@@ -293,10 +300,22 @@
     // End Function
 
 
+    // Move feed loop to web worker thread
+    var worker = new Worker("js/woker.js");
+    worker.onmessage = function (e) {
+      // Log the workers message.
+      // console.log(e.data);
+      var xaxis = e.data;
+      var elem = document.getElementById("matches-slider");
+      elem.style.transform = "translateX(" + xaxis + "vw)";
+      konekTicker['pos'] = xaxis;
+    };
+
 
     // .10 is slow speed
     // .04 is a fast speed
     let konekTicker = new TickerTape(feed_example, 1, 1, 0, 20.25, .10, 4);
+    console.log(konekTicker);
     // console.log(Object.keys(konekTicker)[0]);
     // console.log(konekTicker.categories);
     // console.log(Object.values(konekTicker.categories)[0]);
@@ -334,26 +353,18 @@
             }
 
             //  Set the inital div view !!
-            let matches_wrapper = document.createElement("div");
-            matches_wrapper.setAttribute("id", "matches-wrapper");
-            matches_wrapper.appendChild(Object.values(konekTicker.matches)[0]);
-            document.getElementById("ticker-tape").appendChild(Object.values(konekTicker.categories)[0]);
-            document.getElementById("ticker-tape").appendChild(matches_wrapper);
+            if(konekTicker['init'] === 0) {
+              let matches_wrapper = document.createElement("div");
+              matches_wrapper.setAttribute("id", "matches-wrapper");
+              matches_wrapper.appendChild(Object.values(konekTicker.matches)[0]);
+              document.getElementById("ticker-tape").appendChild(Object.values(konekTicker.categories)[0]);
+              document.getElementById("ticker-tape").appendChild(matches_wrapper);
+              konekTicker['init'] = 1;
+            }
 
-            // Move to worker thread
-            var worker = new Worker("js/woker.js");
-            worker.addEventListener('message', function (e) {
-
-              var elem = document.getElementById("matches-slider");
-              elem.style.transform  = "translateX(" + e.data + "vw)";
-
-              // Log the workers message.
-              console.log(e.data);
-
-            }, false);
-
-            worker.postMessage(0);
-
+            var ticker_tape = document.getElementById("ticker-tape");
+            ticker_tape.style.visibility = "visible";
+            worker.postMessage({stopped: 0, pos: konekTicker['pos'], speed: konekTicker['speed']});
 
         }
     }
@@ -380,7 +391,7 @@
                 feed_stop_button.className += class_name_dis;
             }
 
-            konekTicker.stop();
+            worker.postMessage({stopped: 1, pos: konekTicker['pos'], speed: konekTicker['speed']});
         }
     }
 </script>

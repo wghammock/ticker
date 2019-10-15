@@ -89,6 +89,7 @@ header {
     align-items: center;
     justify-content: space-between;
     background-color: var(--konek-medlite-grey);
+    visibility: hidden;
 }
 #ticker-tape #category-wrapper {
     display: flex;
