@@ -5,7 +5,6 @@ Notes:
 1) The View is optimized for a screen ratio of 16:9. 
 There is some responsiveness within that ball-park range.
 
-
 2) ECMAScript 6 support is required, if javascript is disabled an error will display.
 When opened in IE, user will be prompted to upgrade browser.
 
@@ -15,6 +14,14 @@ To reduce the size of the webfont used, I removed the following chars
 
 4) I've added some good hooks for future use like autoplay and direction, not everything is 100% is
 fully flushed out because this is just a demo ; )
+
+5) This was built for and tested on Chrome using Node Http-server
+sudo npm install -g http-server
+
+From then on just cd to the folder that has the files you want to serve and type
+http-server
+
+More time would be required for testing on all browsers : )
 
 
 ==========================================
