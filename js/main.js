@@ -3,9 +3,9 @@
 "use strict";
 
 // Create a sample feed
-var feed_example = '[{"id":5,"name":"MLB","provider_value":"sr:tournament:109","matches":[{"id":20599,"name":"Pittsburgh Pirates VS Philadelphia Phillies","schedule":"2019-08-27T23:05:00+00:00","home_abbreviation":"PHI","away_abbreviation":"PIT","odds":{"home_ml":-147,"favourite_team":"PHI","spread":"1.5","total":"10","away_ml":"+125"}},{"id":20610,"name":"Baltimore Orioles VS Washington Nationals","schedule":"2019-08-27T23:05:00+00:00","home_abbreviation":"WSH","away_abbreviation":"BAL","odds":{"total":"9.5","home_ml":-333,"favourite_team":"WSH","spread":"1.5","away_ml":"+265"}},{"id":20601,"name":"Chicago Cubs VS New York Mets","schedule":"2019-08-27T23:10:00+00:00","home_abbreviation":"NYM","away_abbreviation":"CHC","odds":{"total":"8","away_ml":-116,"favourite_team":"CHC","spread":"1.5","home_ml":-105}},{"id":20604,"name":"Cleveland Indians VS Detroit Tigers","schedule":"2019-08-27T23:10:00+00:00","home_abbreviation":"DET","away_abbreviation":"CLE","odds":{"favourite_team":"CLE","spread":"1.5","total":"9.5","home_ml":"+145","away_ml":-167}},{"id":20600,"name":"Cincinnati Reds VS Miami Marlins","schedule":"2019-08-27T23:10:00+00:00","home_abbreviation":"MIA","away_abbreviation":"CIN","odds":{"total":"7","away_ml":-161,"favourite_team":"CIN","spread":"1.5","home_ml":"+140"}}]},{"id":1,"name":"NFL","provider_value":"sr:tournament:233","matches":[{"id":20426,"name":"Pittsburgh Steelers VS Carolina Panthers","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"CAR","away_abbreviation":"PIT","odds":{"total":"33","home_ml":"+155","away_ml":-175,"favourite_team":"PIT","spread":"3.5"}},{"id":20429,"name":"Philadelphia Eagles VS New York Jets","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"NYJ","away_abbreviation":"PHI","odds":{"favourite_team":"NYJ","spread":"4","total":"35","home_ml":-200,"away_ml":"+170"}},{"id":20430,"name":"Atlanta Falcons VS Jacksonville Jaguars","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"JAC","away_abbreviation":"ATL","odds":{"home_ml":-200,"total":"32","away_ml":"+170","favourite_team":"JAC","spread":"4"}},{"id":20428,"name":"Indianapolis Colts VS Cincinnati Bengals","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"CIN","away_abbreviation":"IND","odds":{"favourite_team":"CIN","spread":"3","total":"33.5","home_ml":-156,"away_ml":"+135"}},{"id":20427,"name":"Minnesota Vikings VS Buffalo Bills","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"BUF","away_abbreviation":"MIN","odds":{"home_ml":"+135","total":"35","away_ml":-156,"favourite_team":"MIN","spread":"3"}}]}]';
-//var feed_example = '[{"id":1,"name":"NFL","provider_value":"sr:tournament:233","matches":[{"id":20426,"name":"Pittsburgh Steelers VS Carolina Panthers","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"CAR","away_abbreviation":"PIT","odds":{"total":"33","home_ml":"+155","away_ml":-175,"favourite_team":"PIT","spread":"3.5"}},{"id":20429,"name":"Philadelphia Eagles VS New York Jets","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"NYJ","away_abbreviation":"PHI","odds":{"favourite_team":"NYJ","spread":"4","total":"35","home_ml":-200,"away_ml":"+170"}},{"id":20430,"name":"Atlanta Falcons VS Jacksonville Jaguars","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"JAC","away_abbreviation":"ATL","odds":{"home_ml":-200,"total":"32","away_ml":"+170","favourite_team":"JAC","spread":"4"}},{"id":20428,"name":"Indianapolis Colts VS Cincinnati Bengals","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"CIN","away_abbreviation":"IND","odds":{"favourite_team":"CIN","spread":"3","total":"33.5","home_ml":-156,"away_ml":"+135"}},{"id":20427,"name":"Minnesota Vikings VS Buffalo Bills","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"BUF","away_abbreviation":"MIN","odds":{"home_ml":"+135","total":"35","away_ml":-156,"favourite_team":"MIN","spread":"3"}}]}]';
-// var feed_example = '[{"id":5,"name":"MLB","provider_value":"sr:tournament:109","matches":[{"id":20599,"name":"Pittsburgh Pirates VS Philadelphia Phillies","schedule":"2019-08-27T23:05:00+00:00","home_abbreviation":"PHI","away_abbreviation":"PIT","odds":{"home_ml":-147,"favourite_team":"PHI","spread":"1.5","total":"10","away_ml":"+125"}},{"id":20610,"name":"Baltimore Orioles VS Washington Nationals","schedule":"2019-08-27T23:05:00+00:00","home_abbreviation":"WSH","away_abbreviation":"BAL","odds":{"total":"9.5","home_ml":-333,"favourite_team":"WSH","spread":"1.5","away_ml":"+265"}},{"id":20601,"name":"Chicago Cubs VS New York Mets","schedule":"2019-08-27T23:10:00+00:00","home_abbreviation":"NYM","away_abbreviation":"CHC","odds":{"total":"8","away_ml":-116,"favourite_team":"CHC","spread":"1.5","home_ml":-105}},{"id":20604,"name":"Cleveland Indians VS Detroit Tigers","schedule":"2019-08-27T23:10:00+00:00","home_abbreviation":"DET","away_abbreviation":"CLE","odds":{"favourite_team":"CLE","spread":"1.5","total":"9.5","home_ml":"+145","away_ml":-167}},{"id":20600,"name":"Cincinnati Reds VS Miami Marlins","schedule":"2019-08-27T23:10:00+00:00","home_abbreviation":"MIA","away_abbreviation":"CIN","odds":{"total":"7","away_ml":-161,"favourite_team":"CIN","spread":"1.5","home_ml":"+140"}},{"id":20599,"name":"New York Yankees VS Los Angeles Dodgers","schedule":"2019-08-27T23:05:00+00:00","home_abbreviation":"NYY","away_abbreviation":"LAD","odds":{"home_ml":-147,"favourite_team":"LAD","spread":"2.5","total":"10","away_ml":"+125"}},{"id":20610,"name":"Oakland Athletics VS Minnesota Twins","schedule":"2019-08-27T23:05:00+00:00","home_abbreviation":"MIN","away_abbreviation":"OAK","odds":{"total":"9.5","home_ml":-333,"favourite_team":"MIN","spread":"3.5","away_ml":"+265"}},{"id":20601,"name":"Houston Astros VS Colorado Rockies","schedule":"2019-08-27T23:10:00+00:00","home_abbreviation":"HOU","away_abbreviation":"COL","odds":{"total":"8","away_ml":-116,"favourite_team":"COL","spread":"1.5","home_ml":-105}}]},{"id":1,"name":"NFL","provider_value":"sr:tournament:233","matches":[{"id":20426,"name":"Pittsburgh Steelers VS Carolina Panthers","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"CAR","away_abbreviation":"PIT","odds":{"total":"33","home_ml":"+155","away_ml":-175,"favourite_team":"PIT","spread":"3.5"}},{"id":20429,"name":"Philadelphia Eagles VS New York Jets","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"NYJ","away_abbreviation":"PHI","odds":{"favourite_team":"NYJ","spread":"4","total":"35","home_ml":-200,"away_ml":"+170"}},{"id":20430,"name":"Atlanta Falcons VS Jacksonville Jaguars","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"JAC","away_abbreviation":"ATL","odds":{"home_ml":-200,"total":"32","away_ml":"+170","favourite_team":"JAC","spread":"4"}},{"id":20428,"name":"Indianapolis Colts VS Cincinnati Bengals","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"CIN","away_abbreviation":"IND","odds":{"favourite_team":"CIN","spread":"3","total":"33.5","home_ml":-156,"away_ml":"+135"}},{"id":20427,"name":"Minnesota Vikings VS Buffalo Bills","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"BUF","away_abbreviation":"MIN","odds":{"home_ml":"+135","total":"35","away_ml":-156,"favourite_team":"MIN","spread":"3"}}]}]';
+// var feed_example = '[{"id":5,"name":"MLB","provider_value":"sr:tournament:109","matches":[{"id":20599,"name":"Pittsburgh Pirates VS Philadelphia Phillies","schedule":"2019-08-27T23:05:00+00:00","home_abbreviation":"PHI","away_abbreviation":"PIT","odds":{"home_ml":-147,"favourite_team":"PHI","spread":"1.5","total":"10","away_ml":"+125"}},{"id":20610,"name":"Baltimore Orioles VS Washington Nationals","schedule":"2019-08-27T23:05:00+00:00","home_abbreviation":"WSH","away_abbreviation":"BAL","odds":{"total":"9.5","home_ml":-333,"favourite_team":"WSH","spread":"1.5","away_ml":"+265"}},{"id":20601,"name":"Chicago Cubs VS New York Mets","schedule":"2019-08-27T23:10:00+00:00","home_abbreviation":"NYM","away_abbreviation":"CHC","odds":{"total":"8","away_ml":-116,"favourite_team":"CHC","spread":"1.5","home_ml":-105}},{"id":20604,"name":"Cleveland Indians VS Detroit Tigers","schedule":"2019-08-27T23:10:00+00:00","home_abbreviation":"DET","away_abbreviation":"CLE","odds":{"favourite_team":"CLE","spread":"1.5","total":"9.5","home_ml":"+145","away_ml":-167}},{"id":20600,"name":"Cincinnati Reds VS Miami Marlins","schedule":"2019-08-27T23:10:00+00:00","home_abbreviation":"MIA","away_abbreviation":"CIN","odds":{"total":"7","away_ml":-161,"favourite_team":"CIN","spread":"1.5","home_ml":"+140"}}]},{"id":1,"name":"NFL","provider_value":"sr:tournament:233","matches":[{"id":20426,"name":"Pittsburgh Steelers VS Carolina Panthers","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"CAR","away_abbreviation":"PIT","odds":{"total":"33","home_ml":"+155","away_ml":-175,"favourite_team":"PIT","spread":"3.5"}},{"id":20429,"name":"Philadelphia Eagles VS New York Jets","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"NYJ","away_abbreviation":"PHI","odds":{"favourite_team":"NYJ","spread":"4","total":"35","home_ml":-200,"away_ml":"+170"}},{"id":20430,"name":"Atlanta Falcons VS Jacksonville Jaguars","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"JAC","away_abbreviation":"ATL","odds":{"home_ml":-200,"total":"32","away_ml":"+170","favourite_team":"JAC","spread":"4"}},{"id":20428,"name":"Indianapolis Colts VS Cincinnati Bengals","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"CIN","away_abbreviation":"IND","odds":{"favourite_team":"CIN","spread":"3","total":"33.5","home_ml":-156,"away_ml":"+135"}},{"id":20427,"name":"Minnesota Vikings VS Buffalo Bills","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"BUF","away_abbreviation":"MIN","odds":{"home_ml":"+135","total":"35","away_ml":-156,"favourite_team":"MIN","spread":"3"}}]}]';
+// var feed_example = '[{"id":1,"name":"NFL","provider_value":"sr:tournament:233","matches":[{"id":20426,"name":"Pittsburgh Steelers VS Carolina Panthers","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"CAR","away_abbreviation":"PIT","odds":{"total":"33","home_ml":"+155","away_ml":-175,"favourite_team":"PIT","spread":"3.5"}},{"id":20429,"name":"Philadelphia Eagles VS New York Jets","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"NYJ","away_abbreviation":"PHI","odds":{"favourite_team":"NYJ","spread":"4","total":"35","home_ml":-200,"away_ml":"+170"}},{"id":20430,"name":"Atlanta Falcons VS Jacksonville Jaguars","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"JAC","away_abbreviation":"ATL","odds":{"home_ml":-200,"total":"32","away_ml":"+170","favourite_team":"JAC","spread":"4"}},{"id":20428,"name":"Indianapolis Colts VS Cincinnati Bengals","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"CIN","away_abbreviation":"IND","odds":{"favourite_team":"CIN","spread":"3","total":"33.5","home_ml":-156,"away_ml":"+135"}},{"id":20427,"name":"Minnesota Vikings VS Buffalo Bills","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"BUF","away_abbreviation":"MIN","odds":{"home_ml":"+135","total":"35","away_ml":-156,"favourite_team":"MIN","spread":"3"}}]}]';
+var feed_example = '[{"id":5,"name":"MLB","provider_value":"sr:tournament:109","matches":[{"id":20599,"name":"Pittsburgh Pirates VS Philadelphia Phillies","schedule":"2019-08-27T23:05:00+00:00","home_abbreviation":"PHI","away_abbreviation":"PIT","odds":{"home_ml":-147,"favourite_team":"PHI","spread":"1.5","total":"10","away_ml":"+125"}},{"id":20610,"name":"Baltimore Orioles VS Washington Nationals","schedule":"2019-08-27T23:05:00+00:00","home_abbreviation":"WSH","away_abbreviation":"BAL","odds":{"total":"9.5","home_ml":-333,"favourite_team":"WSH","spread":"1.5","away_ml":"+265"}},{"id":20601,"name":"Chicago Cubs VS New York Mets","schedule":"2019-08-27T23:10:00+00:00","home_abbreviation":"NYM","away_abbreviation":"CHC","odds":{"total":"8","away_ml":-116,"favourite_team":"CHC","spread":"1.5","home_ml":-105}},{"id":20604,"name":"Cleveland Indians VS Detroit Tigers","schedule":"2019-08-27T23:10:00+00:00","home_abbreviation":"DET","away_abbreviation":"CLE","odds":{"favourite_team":"CLE","spread":"1.5","total":"9.5","home_ml":"+145","away_ml":-167}},{"id":20600,"name":"Cincinnati Reds VS Miami Marlins","schedule":"2019-08-27T23:10:00+00:00","home_abbreviation":"MIA","away_abbreviation":"CIN","odds":{"total":"7","away_ml":-161,"favourite_team":"CIN","spread":"1.5","home_ml":"+140"}},{"id":20599,"name":"New York Yankees VS Los Angeles Dodgers","schedule":"2019-08-27T23:05:00+00:00","home_abbreviation":"NYY","away_abbreviation":"LAD","odds":{"home_ml":-147,"favourite_team":"LAD","spread":"2.5","total":"10","away_ml":"+125"}},{"id":20610,"name":"Oakland Athletics VS Minnesota Twins","schedule":"2019-08-27T23:05:00+00:00","home_abbreviation":"MIN","away_abbreviation":"OAK","odds":{"total":"9.5","home_ml":-333,"favourite_team":"MIN","spread":"3.5","away_ml":"+265"}},{"id":20601,"name":"Houston Astros VS Colorado Rockies","schedule":"2019-08-27T23:10:00+00:00","home_abbreviation":"HOU","away_abbreviation":"COL","odds":{"total":"8","away_ml":-116,"favourite_team":"COL","spread":"1.5","home_ml":-105}}]},{"id":1,"name":"NFL","provider_value":"sr:tournament:233","matches":[{"id":20426,"name":"Pittsburgh Steelers VS Carolina Panthers","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"CAR","away_abbreviation":"PIT","odds":{"total":"33","home_ml":"+155","away_ml":-175,"favourite_team":"PIT","spread":"3.5"}},{"id":20429,"name":"Philadelphia Eagles VS New York Jets","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"NYJ","away_abbreviation":"PHI","odds":{"favourite_team":"NYJ","spread":"4","total":"35","home_ml":-200,"away_ml":"+170"}},{"id":20430,"name":"Atlanta Falcons VS Jacksonville Jaguars","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"JAC","away_abbreviation":"ATL","odds":{"home_ml":-200,"total":"32","away_ml":"+170","favourite_team":"JAC","spread":"4"}},{"id":20428,"name":"Indianapolis Colts VS Cincinnati Bengals","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"CIN","away_abbreviation":"IND","odds":{"favourite_team":"CIN","spread":"3","total":"33.5","home_ml":-156,"away_ml":"+135"}},{"id":20427,"name":"Minnesota Vikings VS Buffalo Bills","schedule":"2019-08-29T23:00:00+00:00","home_abbreviation":"BUF","away_abbreviation":"MIN","odds":{"home_ml":"+135","total":"35","away_ml":-156,"favourite_team":"MIN","spread":"3"}}]}]';
 
 //
 // NOTE: These are only here to provide sample images, in real life we would have our own images
@@ -19,12 +19,13 @@ var CAT_LOGO = {
 var MLB_LOGO = {
     ATL:"https://ssl.gstatic.com/onebox/media/sports/logos/XY1SVEZwciGu2O0ChWKv4A_48x48.png",
     BAL:"https://ssl.gstatic.com/onebox/media/sports/logos/4E3uuwhG5inhsSdR1NPa6Q_48x48.png",
-    COL:"https://ssl.gstatic.com/onebox/media/sports/logos/Xhoba8Glkl5hAKLPis5WXQ_48x48.png",
-    CLE:"https://ssl.gstatic.com/onebox/media/sports/logos/RRcIM7GMCdTUDZP3uXJl9g_48x48.png",
     CHC:"https://ssl.gstatic.com/onebox/media/sports/logos/PBmgKhiGoYOGTl1L5FGaiQ_48x48.png",
+    CIN:"https://ssl.gstatic.com/onebox/media/sports/logos/-XhGI3cGCeuXStm06CF_kw_48x48.png",
+    CLE:"https://ssl.gstatic.com/onebox/media/sports/logos/RRcIM7GMCdTUDZP3uXJl9g_48x48.png",
+    COL:"https://ssl.gstatic.com/onebox/media/sports/logos/Xhoba8Glkl5hAKLPis5WXQ_48x48.png",
     DET:"https://ssl.gstatic.com/onebox/media/sports/logos/7rDj2EZVlcouQNkRgcxCmw_48x48.png",
     HOU:"https://ssl.gstatic.com/onebox/media/sports/logos/ey32o-rV1MBGbst3pFB_sg_48x48.png",
-    FLA:"https://ssl.gstatic.com/onebox/media/sports/logos/CcJYNnWBPQcT-lP1fUIf8Q_48x48.png",
+    MIA:"https://ssl.gstatic.com/onebox/media/sports/logos/CcJYNnWBPQcT-lP1fUIf8Q_48x48.png",
     LAD:"https://ssl.gstatic.com/onebox/media/sports/logos/dgxxs-ybyRdTOEWRZ265AQ_48x48.png",
     NYM:"https://ssl.gstatic.com/onebox/media/sports/logos/8VapQG4UqRE64iPYq6W3FQ_48x48.png",
     NYY:"https://ssl.gstatic.com/onebox/media/sports/logos/SvZBOWebmgQGdzqKGbYRCw_48x48.png",
@@ -59,18 +60,27 @@ var NFL_LOGO = {
 
 
 
-// Create TickerTape Class Object
-// params notes: auto_start = 1 will play the ticker automatically
-// params notes: direction = 1 will scroll the ticker left
+// Create TickerTape Class Object  [[ WILLIAM's PARAMATER NOTES ]]
+// auto_start = 1 will play the ticker automatically
+// direction = 1 will scroll the ticker left
+// inital_pos = the css postion of the slider element when the
+// match_width = you must get the full width of this item #ticker-tape #matches-wrapper #matches-slider > div ( width + margin / border)
 class TickerTape {
-    constructor(feed = null, auto_start = 0, direction = 1, initial_pos = 0) {
+    constructor(feed = null, auto_start = 0, direction = 1, initial_pos = 0, match_width = 10, speed) {
         this.feed = JSON.parse(feed);
         this.direction = direction;
         this.pos = initial_pos;
-        this.stopped = (auto_start === 0) ? 1 : 0;
+        this.match_width = match_width;
+        this.speed = speed;
         //
-        this.feed_html_obj = {};
-        this.cat_html_obj = {};
+        this.current_match_count = 4;
+        this.stopped = (auto_start === 0) ? 1 : 0;
+
+        // tracking for play method
+        let cat_counter = 0;
+        this.master_obj = [];
+
+        this.chicken = "birdface";
 
         // Kill the feature if the feed is blank or undefined
         if(!feed){
@@ -90,6 +100,10 @@ class TickerTape {
     }
 
     start() {
+
+        console.log('master object');
+        console.log(this.master_obj);
+
         // let feed_container = document.createElement("div");
         // feed_container.className = "matches-wrapper";
         // document.getElementById("ticker-tape").appendChild(feed_container);
@@ -97,40 +111,34 @@ class TickerTape {
         // set stopped to 0;
         this.stopped = 0;
 
-        console.log('Chicken');
-        console.log(this.stopped);
-        console.log(this.pos);
-
         if(this.stopped === 1){
             // do nothing, this is default for autoplay = 0
         } else {
-            console.log("I am groot");
-            var elem = document.getElementById("matches-wrapper");
-            var pos_temp = this.pos;
-            var id = setInterval(frame, 5);
+            // console.log("I am groot");
+            var elem = document.getElementById("matches-slider");
+            var max_feed_length = -(this.current_match_count * this.match_width);
+            // use 15 millisencds for smooth animation
+            var id = setInterval(frame.bind(this), 15);
+
             function frame() {
-                // if (this.pos < -100) {
-                if (pos_temp < -100) {
-                    //this.pos = pos_temp;
-                    //clearInterval(id);
+                if ((this.pos == -1000) || (this.stopped === 1)) {
+                    clearInterval(id);
                 } else {
-                     pos_temp = pos_temp - .008;
-                    // this.pos = this.pos - .008;
-                    // elem.style.top = pos + "px";
-
-                    elem.style.left = pos_temp + "vw";
-
-                    // if(this.direction === 1) {
-                    //     elem.style.left = pos_temp + "vw";
-                    // } else {
-                    //     elem.style.right = pos_temp + "vw";
-                    // }
-
-
+                    // TODO
+                    // CHECK DIRECTION WOULD GO HERE
+                    this.pos = this.pos - this.speed;
                     // elem.style.left = this.pos + "vw";
-
+                    elem.style.transform  = "translateX(" + this.pos + "vw)";
                 }
             }
+
+            // while (pos_temp > max_feed_length) {
+            //     //text += "The number is " + i;
+            //     elem.style.left = pos_temp + "vw";
+            //     pos_temp = pos_temp - .008;
+            // }
+
+
         }
 
 
@@ -150,9 +158,6 @@ class TickerTape {
             let feedHTMLobj = {};
 
             Object.keys(feed_to_parse).forEach(function (item) {
-                // console.log(item); // key
-                 console.log(feed_to_parse[item]); // value
-                // console.log(feed_to_parse[item].matches.length); //matches
 
                 // =============   CREATE CATEGORY BOX  =============
                 let category_box = document.createElement("div");
@@ -194,6 +199,9 @@ class TickerTape {
 
                     let feedInnerHtml = '';
                     Object.keys(feed_to_parse[item].matches).forEach(function (item2) {
+
+                        console.log(this.master_obj);
+
                         // INSERT Teams, Spread, ML, logos
                         // TODO refactor this to a function
                         feedInnerHtml += '<div><div class="match-box">';
@@ -201,7 +209,7 @@ class TickerTape {
 
                         // INSERT TEAM LOGO FUNCTION
                         // TODO refactor this to a function
-                        switch(feed_to_parse[item].name) {
+                        switch (feed_to_parse[item].name) {
                             case 'MLB':
                                 feedInnerHtml += '<div><img class="logo-image" src="' + MLB_LOGO[feed_to_parse[item].matches[item2].away_abbreviation] + '" /></div>';
                                 break;
@@ -214,8 +222,7 @@ class TickerTape {
 
                         feedInnerHtml += '<div class="team">' + feed_to_parse[item].matches[item2].away_abbreviation + '</div>';
                         //
-                        if (feed_to_parse[item].matches[item2].odds !== undefined)
-                        {
+                        if (feed_to_parse[item].matches[item2].odds !== undefined) {
                             if (feed_to_parse[item].matches[item2].odds.favourite_team === feed_to_parse[item].matches[item2].away_abbreviation) {
                                 feedInnerHtml += '<div class="odds">+' + feed_to_parse[item].matches[item2].odds.spread;
                             } else {
@@ -228,7 +235,7 @@ class TickerTape {
                         feedInnerHtml += '<div class="home">';
                         // INSERT TEAM LOGO FUNCTION
                         // TODO refactor this to a function
-                        switch(feed_to_parse[item].name) {
+                        switch (feed_to_parse[item].name) {
                             case 'MLB':
                                 feedInnerHtml += '<div><img class="logo-image" src="' + MLB_LOGO[feed_to_parse[item].matches[item2].home_abbreviation] + '" /></div>';
                                 break;
@@ -240,29 +247,34 @@ class TickerTape {
                         // END TODO
 
                         feedInnerHtml += '<div class="team">' + feed_to_parse[item].matches[item2].home_abbreviation + '</div>';
-                            //
-                            if (feed_to_parse[item].matches[item2].odds !== undefined)
-                            {
-                                if (feed_to_parse[item].matches[item2].odds.favourite_team === feed_to_parse[item].matches[item2].home_abbreviation) {
-                                    feedInnerHtml += '<div class="odds">+' + feed_to_parse[item].matches[item2].odds.spread;
-                                } else {
-                                    feedInnerHtml += '<div class="odds">-' + feed_to_parse[item].matches[item2].odds.spread;
-                                }
-                                feedInnerHtml += '(' + feed_to_parse[item].matches[item2].odds.home_ml + ')</div>';
-                                feedInnerHtml += '</div>';
+                        //
+                        if (feed_to_parse[item].matches[item2].odds !== undefined) {
+                            if (feed_to_parse[item].matches[item2].odds.favourite_team === feed_to_parse[item].matches[item2].home_abbreviation) {
+                                feedInnerHtml += '<div class="odds">+' + feed_to_parse[item].matches[item2].odds.spread;
+                            } else {
+                                feedInnerHtml += '<div class="odds">-' + feed_to_parse[item].matches[item2].odds.spread;
                             }
+                            feedInnerHtml += '(' + feed_to_parse[item].matches[item2].odds.home_ml + ')</div>';
+                            feedInnerHtml += '</div>';
+                        }
 
                         // TOTAL POINTS LINE
-                        if (feed_to_parse[item].matches[item2].odds.total !== undefined)
-                        {
-                            feedInnerHtml += '<div class="total">Ov ' + feed_to_parse[item].matches[item2].odds.total + ' / Un ' + feed_to_parse[item].matches[item2].odds.total +'</div>';
+                        if (feed_to_parse[item].matches[item2].odds.total !== undefined) {
+                            feedInnerHtml += '<div class="total">Ov ' + feed_to_parse[item].matches[item2].odds.total + ' / Un ' + feed_to_parse[item].matches[item2].odds.total + '</div>';
                         }
                         feedInnerHtml += '</div></div>';
 
                         feedInnerHtml += '</div>';
                         // END TODO
-                    });
-                    matches_slider.innerHTML = feedInnerHtml;
+                    }, this);
+
+                    if(feedInnerHtml !== undefined) {
+                        // This will duplicate the items in the slider
+                        // allowing the slider to wrap around without blank space
+                        // in a functional assignment I would ask what to do with feeds of only 2 matches etc.
+                        feedInnerHtml += feedInnerHtml;
+                        matches_slider.innerHTML = feedInnerHtml;
+                    }
 
                     // category_box.appendChild(category_name);
 
@@ -276,7 +288,10 @@ class TickerTape {
 
                 }
 
-            });
+                // USE THIS TO TRACK IN THE PLAY METHOD LATER ON
+                this.master_obj.push(match_count);
+
+            }, this);
 
             let matches_wrapper = document.createElement("div");
             matches_wrapper.setAttribute("id", "matches-wrapper");
@@ -302,23 +317,64 @@ class TickerTape {
 }
 // End
 
-
-let konekTicker = new TickerTape(feed_example, 0, 1, 19.50);
+// .10 is slow speed
+// .04 is a fast speed
+let konekTicker = new TickerTape(feed_example, 0, 1, 0, 20.25, .10);
 
 
 // Attach functions to buttons
-document.getElementById("start_feed").onclick = function() {startFeedFunction()};
+document.getElementById("start-feed").onclick = function() {startFeedFunction()};
 document.getElementById("stop-feed").onclick = function() {stopFeedFunction()};
 
 
-/* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
+// Start and stop button functions, disable each other to prevent multiple clicks
 function startFeedFunction() {
-    //console.log( document.getElementById("start_feed").className );
-    if( document.getElementById("start_feed").className === "enabled") {
-        // Set the class name to disabled
+
+    let feed_start_button = document.getElementById("start-feed");
+    let feed_stop_button = document.getElementById("stop-feed");
+
+    if( feed_start_button.className === "enabled") {
+
+        let class_name_en = "enabled";
+        let class_name_dis = "disabled";
+        let start_btn_classes = feed_start_button.className.split(" ");
+        let stop_btn_classes = feed_stop_button.className.split(" ");
+
+        feed_start_button.classList.remove(class_name_en);
+        feed_stop_button.classList.remove(class_name_dis);
+
+        if (start_btn_classes.indexOf(class_name_dis) == -1) {
+            feed_start_button.className += class_name_dis;
+        }
+        if (stop_btn_classes.indexOf(class_name_en) == -1) {
+            feed_stop_button.className += class_name_en;
+        }
+
         konekTicker.start()
     }
 }
 function stopFeedFunction() {
-    konekTicker.stop()
+
+    let feed_start_button = document.getElementById("start-feed");
+    let feed_stop_button = document.getElementById("stop-feed");
+
+    if( feed_stop_button.className === "enabled") {
+
+        let class_name_en = "enabled";
+        let class_name_dis = "disabled";
+        let start_btn_classes = feed_start_button.className.split(" ");
+        let stop_btn_classes = feed_stop_button.className.split(" ");
+
+        feed_start_button.classList.remove(class_name_dis);
+        feed_stop_button.classList.remove(class_name_en);
+
+        if (start_btn_classes.indexOf(class_name_en) == -1) {
+            feed_start_button.className += class_name_en;
+        }
+        if (stop_btn_classes.indexOf(class_name_dis) == -1) {
+            feed_stop_button.className += class_name_dis;
+        }
+
+        konekTicker.stop();
+    }
 }
